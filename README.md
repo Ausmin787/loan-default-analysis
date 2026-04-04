@@ -135,7 +135,7 @@ Charts are saved to `visuals/` at 300 DPI.
 
 ## Author
 
-**Sasanka** — Finance minor, DBS Global University  
+**Ausmin** — Finance minor, DBS Global University  
 GitHub: [Ausmin787](https://github.com/Ausmin787)  
 LinkedIn: [ausmindeb](https://www.linkedin.com/in/ausmindeb)  
 Email: ausmindeb32@gmail.com  
