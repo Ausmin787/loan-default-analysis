@@ -23,10 +23,13 @@ loan default. Business audience: banking/credit risk recruiters.
     skew lower) but poor group separation — too much overlap to use as 
     standalone predictor. Useful in combination with behavioral variables.
 
-## Next Steps
-1. Build visualizations (PNG charts for each key finding)
-2. Write README business narrative
-3. Push to GitHub: github.com/Ausmin787/loan-default-analysis
+## PROJECT STATUS: COMPLETE
+- All 4 visualizations built and saved to visuals/
+- README.md written with business narrative
+- Pushed to GitHub: github.com/Ausmin787/loan-default-analysis
+- .gitignore excludes CSV files
+
+NEXT PROJECT: Customer Churn Analysis (telecom or banking dataset)
 
 ## Rules
 - Always save outputs as files, not just terminal output
