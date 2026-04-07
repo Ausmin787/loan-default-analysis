@@ -20,8 +20,6 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 | Source | Kaggle — Give Me Some Credit competition |
 | Rows | 150,000 borrowers |
 | Columns | 11 (10 features + 1 target) |
-| Target | `SeriousDlqin2yrs` — 90+ day delinquency within 2 years |
-| Default rate | 6.68% |
 
 ---
 
@@ -56,10 +54,13 @@ loan-default-analysis/
 
 ## Visualizations
 
-- `finding1_delinquency.png` — Default rate by number of 90-days-late payments
-- `finding2_utilization.png` — Revolving utilization distribution: defaulters vs non-defaulters
-- `finding3_age.png` — Default rate by age group
-- `finding4_income.png` — Monthly income KDE overlay: defaulters vs non-defaulters
+![Default Rate by Delinquency History](visuals/finding1_delinquency.png)
+
+![Revolving Utilization: Defaulters vs Non-Defaulters](visuals/finding2_utilization.png)
+
+![Default Rate by Age Group](visuals/finding3_age.png)
+
+![Monthly Income Distribution: Defaulters vs Non-Defaulters](visuals/finding4_income.png)
 
 ---
 
