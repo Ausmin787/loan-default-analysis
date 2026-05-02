@@ -21,7 +21,7 @@ jobs:
           python-version: '3.11'
 
       - name: Verify Python scripts parse correctly
-        run: python -m py_compile create_db.py finding1_delinquency.py finding2_utilization.py finding3_age.py finding4_income.py
+        run: python -m py_compile finding1_delinquency.py finding2_utilization.py finding3_age.py finding4_income.py
 
   quality:
     name: Code Quality
