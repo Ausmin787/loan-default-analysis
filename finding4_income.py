@@ -15,13 +15,15 @@ defaulters = df[df["SeriousDlqin2yrs"] == 1]["income_capped"]
 
 x = np.linspace(0, cap, 500)
 
+
 def kde(data, x, bw=None):
     data = np.asarray(data)
     n = len(data)
     if bw is None:
         bw = 1.06 * data.std() * n ** (-0.2)
     diff = (x[:, None] - data[None, :]) / bw
-    return exp(-0.5 * diff ** 2).sum(axis=1) / (n * bw * np.sqrt(2 * np.pi))
+    return exp(-0.5 * diff**2).sum(axis=1) / (n * bw * np.sqrt(2 * np.pi))
+
 
 y_non = kde(non_def, x)
 y_def = kde(defaulters, x)

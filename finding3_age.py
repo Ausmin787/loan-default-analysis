@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("cs-training-cleaned.csv")
 
+
 def age_bucket(age):
     if age < 30:
         return "Under 30"
@@ -13,16 +14,13 @@ def age_bucket(age):
     else:
         return "60+"
 
+
 df["age_group"] = df["age"].apply(age_bucket)
 
 order = ["Under 30", "30-45", "45-60", "60+"]
 colors = ["#8b0000", "#d4541a", "#e6a817", "steelblue"]
 
-default_rates = (
-    df.groupby("age_group")["SeriousDlqin2yrs"]
-    .mean()
-    .reindex(order) * 100
-)
+default_rates = df.groupby("age_group")["SeriousDlqin2yrs"].mean().reindex(order) * 100
 
 fig, ax = plt.subplots(figsize=(9, 5))
 fig.patch.set_facecolor("white")

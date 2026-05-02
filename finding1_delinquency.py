@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("cs-training-cleaned.csv")
 
+
 # Group: 0, 1, 2, 3+
 def bucket(x):
     if x == 0:
@@ -14,14 +15,11 @@ def bucket(x):
     else:
         return "3+"
 
+
 df["late_bucket"] = df["NumberOfTimes90DaysLate"].apply(bucket)
 
 order = ["0", "1", "2", "3+"]
-default_rates = (
-    df.groupby("late_bucket")["SeriousDlqin2yrs"]
-    .mean()
-    .reindex(order) * 100
-)
+default_rates = df.groupby("late_bucket")["SeriousDlqin2yrs"].mean().reindex(order) * 100
 
 colors = ["steelblue", "#e6a817", "#d4541a", "#8b0000"]
 
