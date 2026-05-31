@@ -4,6 +4,7 @@ from plotly.subplots import make_subplots
 
 df = pd.read_csv("cs-training-cleaned.csv")
 
+
 # --- Chart 1: Default rate by delinquency bucket ---
 def bucket(x):
     if x == 0:
