@@ -14,6 +14,28 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 
 ---
 
+## Model — Logistic Regression
+
+Trained on the three strongest EDA predictors using an 80/20 train/test split with balanced class weights to handle the dataset's 6.7% default rate.
+
+| Metric | Score |
+|--------|-------|
+| ROC-AUC | 0.808 |
+| Recall (Default class) | 71.0% |
+| Precision (Default class) | 17.5% |
+| Accuracy | 75.7% |
+
+**Feature importance (scaled coefficients):**
+- `NumberOfTimes90DaysLate`: +1.278 — strongest predictor, confirms EDA finding
+- `RevolvingUtilizationOfUnsecuredLines`: +0.865 — second strongest
+- `age`: −0.236 — negative coefficient confirms younger = higher risk
+
+**Interpretation:** ROC-AUC of 0.808 means the model correctly ranks a defaulter above a non-defaulter 80.8% of the time. High recall (71%) is intentional — in credit risk, missing a true defaulter (false negative) is more costly than a false alarm. Low precision reflects the class imbalance: defaults are rare, so even a well-calibrated model generates false positives.
+
+![ROC Curve — Logistic Regression](visuals/roc_curve.png)
+
+---
+
 ## Dataset
 
 | Field | Detail |
@@ -27,6 +49,7 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 ## Tech Stack
 
 - **Analysis:** Python (pandas, matplotlib, seaborn, numpy, plotly)
+- **Modelling:** scikit-learn (LogisticRegression, StandardScaler, train_test_split)
 - **Environment:** SQLite for structured querying
 - **CI:** GitHub Actions (analysis reproducibility workflow)
 
@@ -43,6 +66,7 @@ loan-default-analysis/
 ├── finding5_correlation_heatmap.py  # Chart: feature correlation matrix
 ├── finding6_risk_tier.py            # Chart: composite risk tier distribution + default rates
 ├── dashboard_plotly.py              # Interactive dashboard: 3-panel Plotly HTML
+├── model_logistic_regression.py     # Logistic regression model + ROC curve
 ├── visuals/
 │   ├── finding1_delinquency.png
 │   ├── finding2_utilization.png
@@ -50,7 +74,8 @@ loan-default-analysis/
 │   ├── finding4_income.png
 │   ├── correlation_heatmap.png
 │   ├── risk_tier_distribution.png
-│   └── loan_risk_dashboard.html
+│   ├── loan_risk_dashboard.html
+│   └── roc_curve.png
 ├── cs-training.csv              # Raw dataset (excluded from git)
 ├── cs-training-cleaned.csv      # Cleaned dataset (excluded from git)
 ├── CLAUDE.md                    # Project context and session notes
@@ -73,6 +98,8 @@ loan-default-analysis/
 
 ![Composite Risk Tier: Borrower Distribution and Default Rates](visuals/risk_tier_distribution.png)
 
+![ROC Curve — Logistic Regression Default Prediction](visuals/roc_curve.png)
+
 **Interactive Dashboard:** [loan_risk_dashboard.html](visuals/loan_risk_dashboard.html) — delinquency bar chart, utilization box plot, and age group line chart with hover tooltips.
 
 ---
@@ -80,7 +107,7 @@ loan-default-analysis/
 ## How to Run
 
 1. Clone the repo: `git clone https://github.com/Ausmin787/loan-default-analysis.git`
-2. Install dependencies: `pip install pandas matplotlib seaborn numpy plotly`
+2. Install dependencies: `pip install pandas matplotlib seaborn numpy plotly scikit-learn`
 3. Run each analysis script:
    ```bash
    python finding1_delinquency.py
@@ -90,6 +117,7 @@ loan-default-analysis/
    python finding5_correlation_heatmap.py
    python finding6_risk_tier.py
    python dashboard_plotly.py
+   python model_logistic_regression.py
    ```
 4. Charts saved to `visuals/`
 
