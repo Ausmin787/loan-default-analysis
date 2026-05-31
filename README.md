@@ -35,15 +35,17 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 
 ```
 loan-default-analysis/
-├── finding1_delinquency.py      # Chart: delinquency vs default rate
-├── finding2_utilization.py      # Chart: revolving utilization boxplot
-├── finding3_age.py              # Chart: default rate by age group
-├── finding4_income.py           # Chart: income KDE overlay
+├── finding1_delinquency.py          # Chart: delinquency vs default rate
+├── finding2_utilization.py          # Chart: revolving utilization boxplot
+├── finding3_age.py                  # Chart: default rate by age group
+├── finding4_income.py               # Chart: income KDE overlay
+├── finding5_correlation_heatmap.py  # Chart: feature correlation matrix
 ├── visuals/
 │   ├── finding1_delinquency.png
 │   ├── finding2_utilization.png
 │   ├── finding3_age.png
-│   └── finding4_income.png
+│   ├── finding4_income.png
+│   └── correlation_heatmap.png
 ├── cs-training.csv              # Raw dataset (excluded from git)
 ├── cs-training-cleaned.csv      # Cleaned dataset (excluded from git)
 ├── CLAUDE.md                    # Project context and session notes
@@ -62,6 +64,8 @@ loan-default-analysis/
 
 ![Monthly Income Distribution: Defaulters vs Non-Defaulters](visuals/finding4_income.png)
 
+![Feature Correlation Matrix — All 10 Variables + Target](visuals/correlation_heatmap.png)
+
 ---
 
 ## How to Run
@@ -74,6 +78,7 @@ loan-default-analysis/
    python finding2_utilization.py
    python finding3_age.py
    python finding4_income.py
+   python finding5_correlation_heatmap.py
    ```
 4. Charts saved to `visuals/`
 
