@@ -26,7 +26,7 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 
 ## Tech Stack
 
-- **Analysis:** Python (pandas, matplotlib, seaborn, numpy)
+- **Analysis:** Python (pandas, matplotlib, seaborn, numpy, plotly)
 - **Environment:** SQLite for structured querying
 - **CI:** GitHub Actions (analysis reproducibility workflow)
 
@@ -42,13 +42,15 @@ loan-default-analysis/
 ├── finding4_income.py               # Chart: income KDE overlay
 ├── finding5_correlation_heatmap.py  # Chart: feature correlation matrix
 ├── finding6_risk_tier.py            # Chart: composite risk tier distribution + default rates
+├── dashboard_plotly.py              # Interactive dashboard: 3-panel Plotly HTML
 ├── visuals/
 │   ├── finding1_delinquency.png
 │   ├── finding2_utilization.png
 │   ├── finding3_age.png
 │   ├── finding4_income.png
 │   ├── correlation_heatmap.png
-│   └── risk_tier_distribution.png
+│   ├── risk_tier_distribution.png
+│   └── loan_risk_dashboard.html
 ├── cs-training.csv              # Raw dataset (excluded from git)
 ├── cs-training-cleaned.csv      # Cleaned dataset (excluded from git)
 ├── CLAUDE.md                    # Project context and session notes
@@ -71,12 +73,14 @@ loan-default-analysis/
 
 ![Composite Risk Tier: Borrower Distribution and Default Rates](visuals/risk_tier_distribution.png)
 
+**Interactive Dashboard:** [loan_risk_dashboard.html](visuals/loan_risk_dashboard.html) — delinquency bar chart, utilization box plot, and age group line chart with hover tooltips.
+
 ---
 
 ## How to Run
 
 1. Clone the repo: `git clone https://github.com/Ausmin787/loan-default-analysis.git`
-2. Install dependencies: `pip install pandas matplotlib seaborn numpy`
+2. Install dependencies: `pip install pandas matplotlib seaborn numpy plotly`
 3. Run each analysis script:
    ```bash
    python finding1_delinquency.py
@@ -85,6 +89,7 @@ loan-default-analysis/
    python finding4_income.py
    python finding5_correlation_heatmap.py
    python finding6_risk_tier.py
+   python dashboard_plotly.py
    ```
 4. Charts saved to `visuals/`
 
