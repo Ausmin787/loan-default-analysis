@@ -10,6 +10,7 @@ Credit risk analysis identifying the behavioral and demographic drivers of borro
 2. **Revolving Utilization Gap:** Defaulters median 84% utilization vs 13% for non-defaulters. Near-maximum balances signal financial stress and limited buffer against income shocks.
 3. **Age Effect:** Under-30 group 11.73% default rate vs 3.10% for 60+ age group — a monotonic decline reflecting shorter credit histories and less financial stability.
 4. **Income Weak Standalone:** Income alone is a poor predictor without behavioral signals. Defaulters skew lower-income but distributions overlap too heavily for reliable separation.
+5. **Composite Risk Score Separates Borrowers Cleanly:** Combining 3+ late payments (3pts), utilization >75% (2pts), and age <30 (1pt) into a simple scorecard produces a 10.5x default rate gap — High tier (0.8% of borrowers) at 62.1%, Medium (2.3%) at 21.7%, Low (96.9%) at 5.9%. The additive effect of behavioral signals confirms that multi-signal scoring outperforms any single predictor.
 
 ---
 
