@@ -40,12 +40,14 @@ loan-default-analysis/
 ├── finding3_age.py                  # Chart: default rate by age group
 ├── finding4_income.py               # Chart: income KDE overlay
 ├── finding5_correlation_heatmap.py  # Chart: feature correlation matrix
+├── finding6_risk_tier.py            # Chart: composite risk tier distribution + default rates
 ├── visuals/
 │   ├── finding1_delinquency.png
 │   ├── finding2_utilization.png
 │   ├── finding3_age.png
 │   ├── finding4_income.png
-│   └── correlation_heatmap.png
+│   ├── correlation_heatmap.png
+│   └── risk_tier_distribution.png
 ├── cs-training.csv              # Raw dataset (excluded from git)
 ├── cs-training-cleaned.csv      # Cleaned dataset (excluded from git)
 ├── CLAUDE.md                    # Project context and session notes
@@ -66,6 +68,8 @@ loan-default-analysis/
 
 ![Feature Correlation Matrix — All 10 Variables + Target](visuals/correlation_heatmap.png)
 
+![Composite Risk Tier: Borrower Distribution and Default Rates](visuals/risk_tier_distribution.png)
+
 ---
 
 ## How to Run
@@ -79,6 +83,7 @@ loan-default-analysis/
    python finding3_age.py
    python finding4_income.py
    python finding5_correlation_heatmap.py
+   python finding6_risk_tier.py
    ```
 4. Charts saved to `visuals/`
 
